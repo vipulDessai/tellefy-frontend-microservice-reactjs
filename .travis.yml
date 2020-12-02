@@ -4,9 +4,6 @@ language: node_js
 node_js:
   - "14"
 
-addons:
-  chrome: stable
-
 cache:
   directories:
      - ./node_modules
@@ -15,4 +12,4 @@ install:
   - npm install
 
 script:
-  - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+  - npm run test
