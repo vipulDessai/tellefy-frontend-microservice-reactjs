@@ -3,8 +3,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { userActions } from '../_actions';
+import { history } from '../_helpers';
 
 function LoginPage() {
+    // if logged in redirect to home page
+    if(localStorage.getItem('user')) {
+        history.push({pathname: '/'});
+    }
+
     const [inputs, setInputs] = useState({
         userName: '',
         password: ''
@@ -16,11 +22,6 @@ function LoginPage() {
 
     const dispatch = useDispatch();
     const location = useLocation();
-
-    // reset login status
-    useEffect(() => {
-        dispatch(userActions.logout());
-    });
 
     function handleChange(e) {
         const { name, value } = e.target;

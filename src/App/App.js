@@ -8,6 +8,7 @@ import { alertActions } from '../_actions';
 import { LoginPage } from '../LoginPage/LoginPage';
 import { PrivateRoute } from '../_components';
 import { HomePage } from '../HomePage';
+import { RegisterPage } from '../RegisterPage';
 
 function App() {
   const alert = useSelector(state => state.alert);
@@ -31,6 +32,7 @@ function App() {
               <Switch>
                 <PrivateRoute exact path="/" component={HomePage} />
                 <Route path="/login" component={LoginPage} />
+                <Route path="/register" component={RegisterPage} />
                 <Redirect from="*" to="/" />
               </Switch>
             </Router>
@@ -40,4 +42,4 @@ function App() {
   );
 }
 
-export default App;
+export { App };
