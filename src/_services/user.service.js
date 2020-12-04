@@ -13,7 +13,9 @@ function login(userName, password) {
         body: JSON.stringify({userName, password})
     }
 
-    return fetch(`${process.env.API_URL}/account/authenticate`, requestOptions)
+    console.log(process.env);
+
+    return fetch(`${process.env.REACT_APP_API_URL}/account/authenticate`, requestOptions)
         .then(handleResponse)
         .then(
             user => {

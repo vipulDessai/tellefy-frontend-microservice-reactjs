@@ -5,6 +5,7 @@ import './App.css';
 
 import { history } from '../_helpers';
 import { alertActions } from '../_actions';
+import { LoginPage } from '../LoginPage/LoginPage';
 
 function App() {
   const alert = useSelector(state => state.alert);
@@ -15,7 +16,7 @@ function App() {
       // clear alert on location change
       dispatch(alertActions.clear());
     });
-  }, [])
+  }, []);
 
   return (
     <div className="jumbotron">
@@ -26,7 +27,8 @@ function App() {
             }
             <Router history={history}>
               <Switch>
-
+                <Route path="/login" component={LoginPage} />
+                <Redirect from="*" to="/login" />
               </Switch>
             </Router>
         </div>

@@ -16,7 +16,7 @@ function login(userName, password, from) {
             .then(
                 user => {
                     dispatch(success(user));
-                    history.pushState(from);
+                    history.push(from);
                 },
                 error => {
                     dispatch(failure(error.toString()));
