@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Helmet } from "react-helmet";
 
 import { userActions } from '../_actions';
 import { history } from '../_helpers';
@@ -41,6 +42,10 @@ function LoginPage() {
 
     return (
         <div className="col-lg-8 offset-lg-2">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Tellefy | Login</title>
+            </Helmet>
             <h2>Login</h2>
             <form name="form" onSubmit={handleSubmit}>
                 <div className="form-group">
