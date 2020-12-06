@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { history } from '../_helpers';
 
 import { userActions } from '../_actions';
 
 function HomePage() {
-    const users = useSelector(state => state.users);
     const user = useSelector(state => state.authentication.user);
     const dispatch = useDispatch();
 
