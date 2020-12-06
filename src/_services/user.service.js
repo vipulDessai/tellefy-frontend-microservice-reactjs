@@ -1,9 +1,7 @@
-
-import { authHeader } from "../_helpers";
-
 export const userService = {
     login,
-    logout
+    logout,
+    register,
 }
 
 function login(userName, password) {
@@ -26,6 +24,17 @@ function login(userName, password) {
 function logout() {   
     // remove user from local storage to log user out
     localStorage.removeItem('user');
+}
+
+function register(user) {
+    const reqOptions = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(user)
+    }
+
+    return fetch(`${process.env.REACT_APP_API_URL}/account/register`, reqOptions)
+        .then(handleResponse);
 }
 
 function handleResponse(response) {
