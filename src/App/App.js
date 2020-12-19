@@ -5,7 +5,7 @@ import './App.css';
 
 import { history } from '../_helpers';
 import { alertActions } from '../_actions';
-import { LoginPage } from '../LoginPage/LoginPage';
+import { LoginPage } from '../LoginPage';
 import { PrivateRoute } from '../_components';
 import { HomePage } from '../HomePage';
 import { RegisterPage } from '../RegisterPage';
