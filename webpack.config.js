@@ -5,9 +5,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 const configs = {
-    entry: [
-        './src/index' // Your appʼs entry point
-    ],
+    entry: path.resolve(__dirname, './src/index.js'),
     resolve: {
         extensions: ['.js', '.jsx']
     },
