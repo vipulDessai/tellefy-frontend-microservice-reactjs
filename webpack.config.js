@@ -31,9 +31,11 @@ const configs = {
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebPackPlugin({
             template: './src/index.html',
+            favicon: './src/favicon.ico'
         })
     ],
     devServer: {
+        contentBase: path.resolve(__dirname, './build'),
         historyApiFallback: true,
         hot: true,
     },

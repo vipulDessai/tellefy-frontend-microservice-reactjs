@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "webpack-dev-server",
+    "dev": "webpack serve",
     "build": "webpack --mode production",
     "lint": "esw",
     "test": "jest"
