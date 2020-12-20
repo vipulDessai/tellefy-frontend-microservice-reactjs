@@ -2,17 +2,20 @@ require('dotenv').config();
 
 const webpack = require('webpack');
 const path = require('path');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const globalEnvInBuildReplacer = {};
 for(let envKey in process.env) {
-    globalEnvInBuildReplacer[envKey] = JSON.stringify(process.env[envKey])
+    globalEnvInBuildReplacer[envKey] = JSON.stringify(process.env[envKey]);
 }
 
 const configs = {
     entry: path.resolve(__dirname, './src/index.js'),
     resolve: {
-        extensions: ['.js', '.jsx']
+        alias: {
+            '@': path.resolve(__dirname, './src'),
+        },
+        extensions: ['.js', '.jsx', 'json']
     },
     module: {
         rules: [
@@ -50,7 +53,7 @@ const configs = {
         path: path.resolve(__dirname, './build'),
         filename: 'bundle.js',
     },
-}
+};
 
 if(process.env.NODE_ENV == 'development' && process.argv[3] != 'production') {
     configs.mode = 'development';

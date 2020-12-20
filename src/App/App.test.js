@@ -12,5 +12,9 @@ test('renders login page', () => {
     </Provider>
   );
 
-  expect(screen.getByRole('heading')).toHaveTextContent('Login');
+  expect(
+    screen.getByRole('heading', {
+      name: /login/i
+    })
+  ).toHaveTextContent('Login');
 });
