@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { App } from './App';
@@ -11,5 +12,9 @@ test('renders login page', () => {
     </Provider>
   );
 
-  expect(screen.getByRole('heading')).toHaveTextContent('Login');
+  expect(
+    screen.getByRole('heading', {
+      name: /login/i
+    })
+  ).toHaveTextContent('Login');
 });

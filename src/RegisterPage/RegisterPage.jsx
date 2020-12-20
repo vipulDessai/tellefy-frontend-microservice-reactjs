@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 
 import { history } from '../_helpers';
 import { useState } from 'react';
@@ -86,7 +86,7 @@ function RegisterPage() {
                 </form>
             </div>
         </>
-    )
+    );
 }
 
 export { RegisterPage };

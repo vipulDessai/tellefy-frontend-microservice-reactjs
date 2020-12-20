@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 
 import { userActions } from '../_actions';
 import { history } from '../_helpers';
+
+import { LogoPanel } from '@/LogoPanel/LogoPanel';
 
 function LoginPage() {
     // if logged in redirect to home page
@@ -46,6 +48,7 @@ function LoginPage() {
                 <meta charSet="utf-8" />
                 <title>Tellefy | Login</title>
             </Helmet>
+            <LogoPanel />
             <h2>Login</h2>
             <form name="form" onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -73,7 +76,7 @@ function LoginPage() {
                 </div>
             </form>
         </div>
-    )
+    );
 }
 
 export { LoginPage };

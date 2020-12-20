@@ -2,23 +2,23 @@ export const userService = {
     login,
     logout,
     register,
-}
+};
 
 function login(userName, password) {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({userName, password})
-    }
+    };
 
-    return fetch(`${process.env.REACT_APP_API_URL}/account/authenticate`, requestOptions)
+    return fetch(`${REACT_APP_API_URL}/account/authenticate`, requestOptions)
         .then(handleResponse)
         .then(
             user => {
                 localStorage.setItem('user', JSON.stringify(user));
                 return user;
             }
-        )
+        );
 }
 
 function logout() {   
@@ -31,9 +31,9 @@ function register(user) {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(user)
-    }
+    };
 
-    return fetch(`${process.env.REACT_APP_API_URL}/account/register`, reqOptions)
+    return fetch(`${REACT_APP_API_URL}/account/register`, reqOptions)
         .then(handleResponse);
 }
 
@@ -55,5 +55,5 @@ function handleResponse(response) {
 
                 return data;
             }
-        )
+        );
 }
