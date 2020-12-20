@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "webpack serve",
+    "dev": "webpack serve --port 4200",
     "build": "webpack --mode production",
     "lint": "esw",
     "test": "jest"

@@ -4,6 +4,11 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
+const globalEnvInBuildReplacer = {};
+for(let envKey in process.env) {
+    globalEnvInBuildReplacer[envKey] = JSON.stringify(process.env[envKey])
+}
+
 const configs = {
     entry: path.resolve(__dirname, './src/index.js'),
     resolve: {
@@ -30,7 +35,8 @@ const configs = {
         new HtmlWebPackPlugin({
             template: './src/index.html',
             favicon: './src/favicon.ico'
-        })
+        }),
+        new webpack.DefinePlugin(globalEnvInBuildReplacer)
     ],
     devServer: {
         contentBase: path.resolve(__dirname, './build'),
