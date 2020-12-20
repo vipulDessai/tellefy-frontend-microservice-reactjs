@@ -27,7 +27,7 @@
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
     "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.0"
+    "webpack-cli": "^3.3.12"
   },
   "scripts": {
     "start": "node index.js",
@@ -52,7 +52,6 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.3.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.16.0",
     "eslint-loader": "^4.0.2",
