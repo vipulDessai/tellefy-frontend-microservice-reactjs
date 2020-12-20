@@ -34,7 +34,8 @@
     "dev": "webpack serve --port 4200",
     "build": "webpack --mode production",
     "lint": "esw",
-    "test": "jest"
+    "test": "jest",
+    "fix": "eslint --fix --ext .jsx,.js src/"
   },
   "browserslist": {
     "production": [

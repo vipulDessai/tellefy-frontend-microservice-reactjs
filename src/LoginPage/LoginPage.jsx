@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 
 import { userActions } from '../_actions';
 import { history } from '../_helpers';
@@ -73,7 +73,7 @@ function LoginPage() {
                 </div>
             </form>
         </div>
-    )
+    );
 }
 
 export { LoginPage };
