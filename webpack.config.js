@@ -39,7 +39,6 @@ const configs = {
         new webpack.DefinePlugin(globalEnvInBuildReplacer)
     ],
     devServer: {
-        contentBase: path.resolve(__dirname, './build'),
         historyApiFallback: true,
         hot: true,
     },
