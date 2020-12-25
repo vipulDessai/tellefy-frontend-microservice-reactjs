@@ -12,5 +12,5 @@ const applyMidlewareRef = applyMiddleware(
 
 export const store = createStore(
     rootReducer,
-    process.env.NODE_ENV == 'development' ? composeWithDevTools(applyMidlewareRef) : applyMidlewareRef,
+    NODE_ENV == 'development' ? composeWithDevTools(applyMidlewareRef) : applyMidlewareRef,
 );

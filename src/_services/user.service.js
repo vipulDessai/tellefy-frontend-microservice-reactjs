@@ -11,7 +11,7 @@ function login(userName, password) {
         body: JSON.stringify({userName, password})
     };
 
-    return fetch(`${process.env.REACT_APP_API_URL}/account/authenticate`, requestOptions)
+    return fetch(`${REACT_APP_API_URL}/account/authenticate`, requestOptions)
         .then(handleResponse)
         .then(
             user => {
@@ -33,7 +33,7 @@ function register(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`${process.env.REACT_APP_API_URL}/account/register`, reqOptions)
+    return fetch(`${REACT_APP_API_URL}/account/register`, reqOptions)
         .then(handleResponse);
 }
 

@@ -6,7 +6,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const globalEnvInBuildReplacer = {};
 for(let envKey in process.env) {
-    globalEnvInBuildReplacer[`process.env.${envKey}`] = JSON.stringify(process.env[envKey]);
+    globalEnvInBuildReplacer[envKey] = JSON.stringify(process.env[envKey]);
 }
 
 const configs = {
