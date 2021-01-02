@@ -8,6 +8,10 @@ import { history } from '@/_helpers';
 
 import { LogoPanel } from '@/LogoPanel/LogoPanel';
 
+interface LocationState {
+    from?: Object;
+}
+
 function LoginPage() {
     // if logged in redirect to home page
     if(localStorage.getItem('user')) {
@@ -37,7 +41,7 @@ function LoginPage() {
         setSubmitted(true);
         if(userName && password) {
             // get return url from location state or default to home page
-            const { from } = location.state || { from: { pathname: '/' } };
+            const { from }:LocationState = location.state || { from: { pathname: '/' } };
             dispatch(userActions.login(userName, password, from));
         }
     }

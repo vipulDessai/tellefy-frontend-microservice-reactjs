@@ -6,7 +6,7 @@ import './App.css';
 import { history } from '@/_helpers';
 import { alertActions } from '@/_actions';
 import { LoginPage } from '@/LoginPage';
-import { PrivateRoute } from '@/_components';
+import { PrivateRoute } from '@/_controllers';
 import { HomePage } from '@/HomePage';
 import { RegisterPage } from '@/RegisterPage';
 
