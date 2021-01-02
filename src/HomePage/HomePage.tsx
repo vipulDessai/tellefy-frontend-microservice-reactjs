@@ -9,7 +9,7 @@ function HomePage() {
     const user = useSelector((state: RootState) => state.authentication.user);
     const dispatch = useDispatch();
 
-    function logout(e) {
+    function logout(e: React.MouseEvent) {
         dispatch(userActions.logout());
     }
 

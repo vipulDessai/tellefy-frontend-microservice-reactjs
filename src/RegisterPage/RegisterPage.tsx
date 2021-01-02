@@ -25,12 +25,12 @@ function RegisterPage() {
     const registering = useSelector((state: RootState) => state.registration.registering);
     const dispatch = useDispatch();
 
-    function handleChange(e) {
+    function handleChange(e: React.ChangeEvent) {
         const {name, value} = e.target;
         setUser(user => ({...user, [name]: value}));
     }
 
-    function handleSubmit(e) {
+    function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         setSubmitted(true);
         if (user.firstName && user.lastName && user.userName && user.password) {

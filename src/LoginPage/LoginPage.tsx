@@ -30,12 +30,12 @@ function LoginPage() {
     const dispatch = useDispatch();
     const location = useLocation();
 
-    function handleChange(e) {
+    function handleChange(e: React.ChangeEvent) {
         const { name, value } = e.target;
         setInputs(inputs => ({ ...inputs, [name]: value}));
     }
 
-    function handleSubmit(e) {
+    function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
 
         setSubmitted(true);

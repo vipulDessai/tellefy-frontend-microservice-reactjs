@@ -1,5 +1,5 @@
 import { userConstants } from '@/_constants';
-import { userService } from '@/_services/';
+import { User, userService } from '@/_services/';
 import { history } from '@/_helpers';
 import { alertActions } from './alert.actions';
 
@@ -9,8 +9,8 @@ export const userActions = {
     register,
 };
 
-function login(userName, password, from) {
-    return dispatch => {
+function login(userName: string, password: string, from: Object) {
+    return (dispatch: any) => {
         dispatch(request({userName}));
 
         userService.login(userName, password)
@@ -26,13 +26,13 @@ function login(userName, password, from) {
             );
     };
 
-    function request(user) {
+    function request(user: User) {
         return { type: userConstants.LOGIN_REQUEST, user };
     }
-    function success(user) {
+    function success(user: User) {
         return { type: userConstants.LOGIN_SUCCESS, user };
     }
-    function failure(error) {
+    function failure(error: any) {
         return { type: userConstants.LOGIN_FAILURE, error };
     }
 }
@@ -42,8 +42,8 @@ function logout() {
     return { type: userConstants.LOGOUT };
 }
 
-function register(user) {
-    return dispatch => {
+function register(user: User) {
+    return (dispatch: any) => {
         dispatch(request(user));
 
         userService.register(user)
@@ -60,13 +60,13 @@ function register(user) {
             );
     };
 
-    function request(user) {
+    function request(user: User) {
         return { type: userConstants.REGISTER_REQUEST, user };
     }
-    function success(user?) {
+    function success(user?: User) {
         return { type: userConstants.REGISTER_SUCCESS, user };
     }
-    function failure(error) {
+    function failure(error: any) {
         return { type: userConstants.REGISTER_FAILURE, error };
     }
 }

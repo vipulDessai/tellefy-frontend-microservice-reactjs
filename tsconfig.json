@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
       "jsx": "react",
-      "noImplicitAny": false,
+      "noImplicitAny": true,
       "esModuleInterop": true,
       "outDir": "./build/",
       "sourceMap": true,
