@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
-function PrivateRoute({component: Component, exact, ...rest}: {component: () => JSX.Element, exact: boolean, path: string, rest?: any}) {
+function PrivateRoute({component: Component, exact, ...rest}: {component: any, exact: boolean, path: string, rest?: any}) {
     return (
         <Route {...rest} 
             render={

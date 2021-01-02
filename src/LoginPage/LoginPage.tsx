@@ -30,7 +30,7 @@ function LoginPage() {
     const dispatch = useDispatch();
     const location = useLocation();
 
-    function handleChange(e: React.ChangeEvent) {
+    function handleChange(e: any) {
         const { name, value } = e.target;
         setInputs(inputs => ({ ...inputs, [name]: value}));
     }

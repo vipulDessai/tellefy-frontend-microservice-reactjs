@@ -25,7 +25,7 @@ function RegisterPage() {
     const registering = useSelector((state: RootState) => state.registration.registering);
     const dispatch = useDispatch();
 
-    function handleChange(e: React.ChangeEvent) {
+    function handleChange(e: any) {
         const {name, value} = e.target;
         setUser(user => ({...user, [name]: value}));
     }
