@@ -1,6 +1,6 @@
-import { userConstants } from '../_constants';
-import { userService } from '../_services/user.service';
-import { history } from '../_helpers';
+import { userConstants } from '@/_constants';
+import { userService } from '@/_services/';
+import { history } from '@/_helpers';
 import { alertActions } from './alert.actions';
 
 export const userActions = {
@@ -63,10 +63,10 @@ function register(user) {
     function request(user) {
         return { type: userConstants.REGISTER_REQUEST, user };
     }
-    function success(user) {
+    function success(user?) {
         return { type: userConstants.REGISTER_SUCCESS, user };
     }
     function failure(error) {
-        return { type: userConstants.REGISTER_FAILURE, user };
+        return { type: userConstants.REGISTER_FAILURE, error };
     }
 }

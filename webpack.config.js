@@ -10,18 +10,24 @@ for(let envKey in process.env) {
 }
 
 const configs = {
-    entry: path.resolve(__dirname, './src/index.js'),
+    entry: path.resolve(__dirname, './src/index.tsx'),
     resolve: {
+        // in case of using tsconfig.json, the alias in webpack can be skipped
+        // this is kept in case we decide to use the js files too for alias
         alias: {
             '@': path.resolve(__dirname, './src'),
         },
-        extensions: ['.js', '.jsx', 'json']
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
     },
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.(ts|tsx)$/,
+                use: 'ts-loader',
             },
             {
                 test: /\.html$/,

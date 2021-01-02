@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
 
-import { userActions } from '../_actions';
-import { history } from '../_helpers';
+import { userActions } from '@/_actions';
+import { history } from '@/_helpers';
 
 import { LogoPanel } from '@/LogoPanel/LogoPanel';
 
