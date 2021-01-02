@@ -9,9 +9,10 @@ import { LoginPage } from '@/LoginPage';
 import { PrivateRoute } from '@/_controllers';
 import { HomePage } from '@/HomePage';
 import { RegisterPage } from '@/RegisterPage';
+import { RootState } from '@/_reducers';
 
 function App() {
-  const alert = useSelector(state => state.alert);
+  const alert = useSelector((state: RootState) => state.alert);
   const dispatch = useDispatch();
 
   useEffect(() => {

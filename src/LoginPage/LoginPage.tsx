@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 
 import { userActions } from '@/_actions';
 import { history } from '@/_helpers';
-
+import { RootState } from '@/_reducers';
 import { LogoPanel } from '@/LogoPanel/LogoPanel';
 
 interface LocationState {
@@ -25,7 +25,7 @@ function LoginPage() {
 
     const [submitted, setSubmitted] = useState(false);
     const { userName, password } = inputs;
-    const loggingIn = useSelector(state => state.authentication.loggingIn);
+    const loggingIn = useSelector((state: RootState) => state.authentication.loggingIn);
 
     const dispatch = useDispatch();
     const location = useLocation();

@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { userActions } from '@/_actions';
+import { RootState } from '@/_reducers';
 
 function RegisterPage() {
     // if logged in redirect to home page
@@ -21,7 +22,7 @@ function RegisterPage() {
         password: ''
     });
     const [submitted, setSubmitted] = useState(false);
-    const registering = useSelector(state => state.registration.registering);
+    const registering = useSelector((state: RootState) => state.registration.registering);
     const dispatch = useDispatch();
 
     function handleChange(e) {
