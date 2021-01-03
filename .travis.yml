@@ -12,6 +12,5 @@ install:
   - npm install
 
 script:
-  - npm install -g ts-jest
   - npm run lint
   - npm run test
