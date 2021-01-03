@@ -3,15 +3,16 @@ import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 
-import { history } from '../_helpers';
-import { alertActions } from '../_actions';
-import { LoginPage } from '../LoginPage';
-import { PrivateRoute } from '../_components';
-import { HomePage } from '../HomePage';
-import { RegisterPage } from '../RegisterPage';
+import { history } from '@/_helpers';
+import { alertActions } from '@/_actions';
+import { LoginPage } from '@/LoginPage';
+import { PrivateRoute } from '@/_controllers';
+import { HomePage } from '@/HomePage';
+import { RegisterPage } from '@/RegisterPage';
+import { RootState } from '@/_reducers';
 
 function App() {
-  const alert = useSelector(state => state.alert);
+  const alert = useSelector((state: RootState) => state.alert);
   const dispatch = useDispatch();
 
   useEffect(() => {

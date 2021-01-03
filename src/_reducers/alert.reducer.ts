@@ -1,6 +1,15 @@
-import { alertConstants } from '../_constants';
+import { alertConstants } from '@/_constants';
 
-export function alert(state = {}, action) {
+interface AlertAction {
+    message: string;
+    type: string;
+}
+interface AlertState {
+    type?: string;
+    message?: string;
+}
+
+export function alert(state: AlertState = {}, action: AlertAction) {
     switch (action.type) {
         case alertConstants.SUCCESS:
             return {

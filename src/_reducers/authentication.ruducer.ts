@@ -1,9 +1,15 @@
-import { userConstants } from '../_constants';
+import { userConstants } from '@/_constants';
+import { User } from "@/_services";
 
-let user = JSON.parse(localStorage.getItem('user'));
-const initialState = user ? { loggedIn: true, user } : {};
+interface AuthenticationAction {
+    type: string;
+    user: User;
+}
 
-export function authentication(state = initialState, action) {
+let user:User = JSON.parse(localStorage.getItem('user'));
+const initialState = user ? { loggingIn: true, user } : {};
+
+export function authentication(state = initialState, action: AuthenticationAction) {
     switch (action.type) {
         case userConstants.LOGIN_REQUEST:
             return {

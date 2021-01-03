@@ -1,10 +1,12 @@
+import { User } from "./User";
+
 export const userService = {
     login,
     logout,
     register,
 };
 
-function login(userName, password) {
+function login(userName: string, password: string) {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -26,7 +28,7 @@ function logout() {
     localStorage.removeItem('user');
 }
 
-function register(user) {
+function register(user: User) {
     const reqOptions = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -37,10 +39,10 @@ function register(user) {
         .then(handleResponse);
 }
 
-function handleResponse(response) {
+function handleResponse(response: any) {
     return response.text()
         .then(
-            text => {
+            (text: string) => {
                 const data = text && JSON.parse(text);
                 if(!response.ok) {
                     if(response.status === 401) {

@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { userActions } from '../_actions';
+import { RootState } from '@/_reducers';
+import { userActions } from '@/_actions';
 
 function HomePage() {
-    const user = useSelector(state => state.authentication.user);
+    const user = useSelector((state: RootState) => state.authentication.user);
     const dispatch = useDispatch();
 
-    function logout(e) {
+    function logout(e: React.MouseEvent) {
         dispatch(userActions.logout());
     }
 

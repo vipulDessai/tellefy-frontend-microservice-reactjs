@@ -3,10 +3,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
 
-import { userActions } from '../_actions';
-import { history } from '../_helpers';
+import { userActions } from '@/_actions';
+import { history } from '@/_helpers';
+import { RootState } from '@/_reducers';
+import { LogoPanel } from '@/LogoPanel';
 
-import { LogoPanel } from '@/LogoPanel/LogoPanel';
+interface LocationState {
+    from?: Object;
+}
 
 function LoginPage() {
     // if logged in redirect to home page
@@ -21,23 +25,23 @@ function LoginPage() {
 
     const [submitted, setSubmitted] = useState(false);
     const { userName, password } = inputs;
-    const loggingIn = useSelector(state => state.authentication.loggingIn);
+    const loggingIn = useSelector((state: RootState) => state.authentication.loggingIn);
 
     const dispatch = useDispatch();
     const location = useLocation();
 
-    function handleChange(e) {
+    function handleChange(e: any) {
         const { name, value } = e.target;
         setInputs(inputs => ({ ...inputs, [name]: value}));
     }
 
-    function handleSubmit(e) {
+    function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
 
         setSubmitted(true);
         if(userName && password) {
             // get return url from location state or default to home page
-            const { from } = location.state || { from: { pathname: '/' } };
+            const { from }:LocationState = location.state || { from: { pathname: '/' } };
             dispatch(userActions.login(userName, password, from));
         }
     }
