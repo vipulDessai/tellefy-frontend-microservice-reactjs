@@ -3,3 +3,4 @@ A simple teller application - frontend microservice - implemented in reactjs
 
 ## TODO
 - [ ] bundle seperately css files and images files
+- [ ] Need to write `custom jest path resolver` to handle alias for images with `@`

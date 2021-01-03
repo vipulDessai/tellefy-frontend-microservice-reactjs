@@ -1,5 +1,7 @@
 import React from 'react';
-import tellerLogo from '@/_images/teller-logo.png';
+
+// todo: Need to write custom jest path resolver to handle alias
+import tellerLogo from '../_images/teller-logo.png';
 
 import './LogoPanel.scss';
 

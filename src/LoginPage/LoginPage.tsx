@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
 import { userActions } from '@/_actions';
 import { history } from '@/_helpers';
 import { RootState } from '@/_reducers';
-import { LogoPanel } from '@/LogoPanel/LogoPanel';
+import { LogoPanel } from '@/LogoPanel';
 
 interface LocationState {
     from?: Object;
