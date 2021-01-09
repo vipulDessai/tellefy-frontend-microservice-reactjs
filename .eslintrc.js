@@ -13,5 +13,8 @@ module.exports = {
         "semi": ["warn", "always"],
         "quotes": ["warn", "single", { "allowTemplateLiterals": true }]
     },
-    "parser": "babel-eslint",
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
 };
