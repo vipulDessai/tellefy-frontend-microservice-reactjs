@@ -1,4 +1,4 @@
-# Tellefy Frontend ReactJS [![Build Status](https://www.travis-ci.com/vipulDessai/tellefy-frontend-microservice-reactjs.svg?branch=working)](https://www.travis-ci.com/vipulDessai/tellefy-frontend-microservice-reactjs)
+# Tellefy Frontend ReactJS ![Check Build](https://github.com/vipulDessai/tellefy-frontend-microservice-reactjs/workflows/Check%20Build/badge.svg)
 A simple teller application - frontend microservice - implemented in reactjs
 
 ## TODO
