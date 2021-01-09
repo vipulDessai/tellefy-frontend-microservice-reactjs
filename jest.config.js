@@ -4,6 +4,12 @@ module.exports = {
         '^.+\\.jsx?$': 'babel-jest',
         '^.+\\.tsx?$': 'ts-jest',
     },
+    globals: {
+        'ts-jest': {
+            'babelConfig': true,
+            'tsconfig': 'tsconfig.json'
+        }
+    },
     setupFilesAfterEnv: [
         '<rootDir>/jest-configs/setup-tests.js',
     ],
