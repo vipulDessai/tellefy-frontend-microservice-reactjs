@@ -1,5 +1,5 @@
 import { userConstants } from '@/_constants';
-import { User } from "@/_services";
+import { User } from '@/_services';
 
 interface AuthenticationAction {
     type: string;
