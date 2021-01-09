@@ -66,10 +66,10 @@ if(process.env.NODE_ENV == 'development' && process.argv[3] != 'production') {
     configs.devtool = 'inline-source-map';
     const eslintConfigs = [
         {
-            test: /\.js(x*)$/,
+            test: /\.(j|t)s(x*)$/,
             exclude: /node_modules/,
-            use: ['babel-loader', 'eslint-loader']
-        }
+            use: ['eslint-loader']
+        },
     ];
     configs.module.rules = [...configs.module.rules, ...eslintConfigs];
 }
