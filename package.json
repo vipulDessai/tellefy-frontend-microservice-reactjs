@@ -43,11 +43,11 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "webpack-dev-server --port 4200 && npm run test:watch",
+    "dev": "webpack-dev-server --port 4200",
     "build": "webpack --mode production",
     "lint": "esw --ext .js,.jsx,.ts,.tsx .",
     "test": "jest",
-    "test:watch": "jest -watch",
+    "test-w": "jest --watch",
     "fix": "eslint --fix --ext .js,.jsx,.ts,.tsx ."
   },
   "browserslist": {
