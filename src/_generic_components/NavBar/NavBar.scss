@@ -1,0 +1,19 @@
+$base-color: #24252A;
+$font-color: #ECEDF1;
+
+nav {
+    background-color: $base-color;
+    color: $font-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    ul {
+        display: flex;
+        align-items: center;
+        &.menu {
+            li {
+                margin: 0 1em;
+            }
+        }
+    }
+}

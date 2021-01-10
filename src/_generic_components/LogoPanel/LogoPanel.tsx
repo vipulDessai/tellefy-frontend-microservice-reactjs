@@ -7,7 +7,7 @@ import './LogoPanel.scss';
 function LogoPanel() {
     return (
         <React.Fragment>
-            <ul>
+            <ul className="brand">
                 <li><img className="logo" src={tellerLogo} alt="logo"></img></li>
                 <li><h1>Tellefy</h1></li>
             </ul>
