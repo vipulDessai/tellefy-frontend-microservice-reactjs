@@ -8,7 +8,7 @@ import { userActions, alertActions } from '@/_actions';
 import { history } from '@/_helpers';
 import { RootState } from '@/_reducers';
 import { LogoPanel } from '@/_generic_components/LogoPanel';
-import { Forms, InputText, InputPassword } from '@/_generic_components/Form';
+import { Forms, InputText, InputPassword, InputSubmit } from '@/_generic_components/Form';
 
 interface LocationState {
     from?: Object;
@@ -67,10 +67,12 @@ function LoginPage() {
             {
                 alert.message && <div className={`alert ${alert.type}`}>{alert.message}</div>
             }
-            <h2>Login</h2>
+            <h2 className="login-label">Login</h2>
             <Forms {...{ loggingIn, handleSubmit }}>
                 <InputText {...{submitted, userName, handleChange}}/>
                 <InputPassword {...{submitted, password, handleChange}}/>
+                <InputSubmit {...{loggingIn}} />
+                <Link to="/register" className="btn btn-link">Register</Link>
             </Forms>
         </>
     );

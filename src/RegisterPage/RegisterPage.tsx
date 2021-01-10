@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-
-import { history } from '@/_helpers';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { userActions } from '@/_actions';
+import { history } from '@/_helpers';
+import { userActions, alertActions } from '@/_actions';
 import { RootState } from '@/_reducers';
+import { LogoPanel } from '@/_generic_components/LogoPanel';
+
+import './RegisterPage.scss';
 
 function RegisterPage() {
+    const alert = useSelector((state: RootState) => state.alert);
+
+    useEffect(() => {
+        history.listen((location, action) => {
+            // clear alert on location change
+            dispatch(alertActions.clear());
+        });
+    });
+
     // if logged in redirect to home page
     if(localStorage.getItem('user')) {
         history.push({pathname: '/'});
@@ -44,8 +55,12 @@ function RegisterPage() {
                 <meta charSet="utf-8" />
                 <title>Tellefy | Register</title>
             </Helmet>
+            <LogoPanel />
+            {
+                alert.message && <div className={`alert ${alert.type}`}>{alert.message}</div>
+            }
             <div className="col-lg-8 offset-lg-2">
-                <h2>Register</h2>
+                <h2 className="register-label">Register</h2>
                 <form name="registerForm" onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="firstName">First Name</label>
