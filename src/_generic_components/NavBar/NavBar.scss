@@ -1,0 +1,18 @@
+@import "../../_styles_global/_colors";
+
+nav {
+    background-color: $base-color;
+    color: $font-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    ul {
+        display: flex;
+        align-items: center;
+        &.menu {
+            li {
+                margin: 0 1em;
+            }
+        }
+    }
+}
