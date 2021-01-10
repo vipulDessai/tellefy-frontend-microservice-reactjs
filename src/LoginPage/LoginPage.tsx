@@ -8,7 +8,7 @@ import { userActions, alertActions } from '@/_actions';
 import { history } from '@/_helpers';
 import { RootState } from '@/_reducers';
 import { LogoPanel } from '@/_generic_components/LogoPanel';
-import { Forms } from '@/_generic_components/Form';
+import { Forms, InputText, InputPassword } from '@/_generic_components/Form';
 
 interface LocationState {
     from?: Object;
@@ -68,7 +68,10 @@ function LoginPage() {
                 alert.message && <div className={`alert ${alert.type}`}>{alert.message}</div>
             }
             <h2>Login</h2>
-            <Forms {...{ submitted, loggingIn, userName, password, handleSubmit, handleChange }}></Forms>
+            <Forms {...{ loggingIn, handleSubmit }}>
+                <InputText {...{submitted, userName, handleChange}}/>
+                <InputPassword {...{submitted, password, handleChange}}/>
+            </Forms>
         </>
     );
 }
