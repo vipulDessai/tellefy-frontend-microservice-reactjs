@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
 
 import { RootState } from '@/_reducers';
-import { NavBar } from '@/_generic_components/NavBar/NavBar';
+import { NavBar } from '@/_generic_components/NavBar';
 
 function HomePage() {
     const user = useSelector((state: RootState) => state.authentication.user);
