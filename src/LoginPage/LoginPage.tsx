@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
 
 import './LoginPage.scss';
-import { userActions } from '@/_actions';
+import { userActions, alertActions } from '@/_actions';
 import { history } from '@/_helpers';
 import { RootState } from '@/_reducers';
 import { LogoPanel } from '@/_generic_components/LogoPanel';
-import { Forms } from '@/_generic_components/Forms';
+import { Forms } from '@/_generic_components/Form';
 
 interface LocationState {
     from?: Object;
 }
 
 function LoginPage() {
+    const alert = useSelector((state: RootState) => state.alert);
+
+    useEffect(() => {
+        history.listen((location, action) => {
+            // clear alert on location change
+            dispatch(alertActions.clear());
+        });
+    });
+
     // if logged in redirect to home page
     if (localStorage.getItem('user')) {
         history.push({ pathname: '/' });
@@ -55,8 +64,11 @@ function LoginPage() {
                 <title>Tellefy | Login</title>
             </Helmet>
             <LogoPanel />
+            {
+                alert.message && <div className={`alert ${alert.type}`}>{alert.message}</div>
+            }
             <h2>Login</h2>
-            <Forms {...{submitted, loggingIn, userName, password, handleSubmit, handleChange}}></Forms>
+            <Forms {...{ submitted, loggingIn, userName, password, handleSubmit, handleChange }}></Forms>
         </>
     );
 }
